@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+  width: 0px; /* Lebar scrollbar */
+}
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky w-full z-20 top-0 start-0 drop-shadow-md">
+        <div class="w-screen flex flex-wrap items-center justify-center mx-auto p-2 px-5">
+            <div class="flex flex-col items-center w-[1%] ">
+                <a href="detail.html">
+                    <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24">
+                        <path
+                            d="M.88,14.09,4.75,18a1,1,0,0,0,1.42,0h0a1,1,0,0,0,0-1.42L2.61,13H23a1,1,0,0,0,1-1h0a1,1,0,0,0-1-1H2.55L6.17,7.38A1,1,0,0,0,6.17,6h0A1,1,0,0,0,4.75,6L.88,9.85A3,3,0,0,0,.88,14.09Z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-col justify-center items-center w-[99%]">
+                <h1 class="self-center text-sm font-semibold dark:text-white">King Koding</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main modal -->
+    <div id="default-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
+                    <div class="flex flex-col justify-start items-center">
+
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            King Koding
+                        </h3>
+                    </div>
+                    <div class="flex flex-col justify-end items-center">
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="default-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 space-y-4 max-h-full">
+                    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                        <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center gap-x-5"
+                            id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                            <li class="me-2" role="presentation">
+                                <button
+                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                    id="settings-tab" data-tabs-target="#settings" type="button" role="tab"
+                                    aria-controls="settings" aria-selected="false">Following<span
+                                        class="px-3 text-red-500 text-sm font-semibold">3</span></button>
+                            </li>
+                            <li role="presentation">
+                                <button
+                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                    id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                    aria-controls="contacts" aria-selected="false">Follower<span
+                                        class="px-3 text-red-500 text-sm font-semibold">5</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="max-h-80 hide-scrollbar overflow-y-scroll overflow-x-hidden" id="default-tab-content">
+                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="settings" role="tabpanel"
+                            aria-labelledby="settings-tab">
+                            <div class="flex justify-between items-center  mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-gray-300 text-xs font-semibold p-1 rounded-md text-gray-800 hover:bg-gray-900 hover:text-white">Following</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="contacts" role="tabpanel"
+                            aria-labelledby="contacts-tab">
+                            <div class="flex justify-between items-center border">
+                                <a class="flex gap-2 items-center cursor-pointer" href="">
+                                    <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image.jpg" alt="">
+                                    <div class="flex flex-col items-start">
+                                        <h1 class="text-sm">Username</h1>
+                                        <h1 class="text-xs font-light text-gray-500">nama_lengkap</h1>
+                                    </div>
+                                </a>
+                                <div class="flex items-center">
+                                    <button
+                                        class="bg-red-600 text-xs font-semibold p-1 rounded-md text-white hover:bg-red-400 hover:text-black">Follow</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="mx-auto w-screen bg-gray-50 drop-shadow-md">
+            <div class="flex flex-col w-full h-full items-center">
+                <img class="w-40 h-40 rounded-full object-cover mt-10" src="assets/img/image.jpg" alt="" />
+                <div class="items-center">
+                    <p class="text-sm text-center font-normal text-gray-500">
+                        Mario Mulyana 2
+                    </p>
+                    <div class="flex gap-4 mb-5">
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-sm">10</h1>
+                            <h1 class="text-xs">Postingan</h1>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button">
+                                <h1 class="font-semibold text-center text-sm">200k</h1>
+                                <h1 class="text-xs">Pengikut</h1>
+                            </button>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h1 class="font-semibold text-sm">10</h1>
+                            <h1 class="text-xs">Mengikuti</h1>
+                        </div>
+                    </div>
+                    <p class="text-sm text-center text-black mb-4">
+                        aku adalah raja koding
+                    </p>
+                </div>
+                <button
+                    class="text-center text-white bg-red-600 border border-gray-400 p-1 rounded-sm text-sm mb-5 drop-shadow-lg w-40 hover:bg-slate-800 hover:text-white"
+                    type="button" data-drawer-target="drawer-contact" data-drawer-show="drawer-contact"
+                    aria-controls="drawer-contact">
+                    Follow
+                </button>
+            </div>
+        </div>
+        <div class="w-full h-full bg-gray-100 mt-4 p-1 drop-shadow-md px-5 sticky start-0 top-9 z-10">
+            <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center" id="default-tab"
+                    data-tabs-toggle="#tab-content" role="tablist">
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-1 border-b-2 rounded-t-lg" id="profile-tab"
+                            data-tabs-target="#postingan" type="button" role="tab" aria-controls="profile"
+                            aria-selected="false">Postingan</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button
+                            class="inline-block p-1 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="dashboard-tab" data-tabs-target="#album" type="button" role="tab"
+                            aria-controls="dashboard" aria-selected="false">Album</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mt-3 mx-auto">
+
+            <div id="tab-content">
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="postingan" role="tabpanel"
+                    aria-labelledby="profile-tab">
+                    <div
+                        class="columns-2 gap-2 sm:gap-2 md:gap-3 lg:gap-4 sm:columns-2 md:columns-4 lg:columns-6 [&>img:not(:first-child)]:mt-2 md:[&>img:not(:first-child)]:mt-2">
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img1.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/image.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/image3.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img4.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img1.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/image1.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img4.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/image3.jpg" alt="" />
+                        <img class="cursor-pointer transition-all duration-100 filter grayscale-0 hover:grayscale scale-100 hover:scale-95"
+                            onclick="window.location.href='detail.html'" src="assets/img/img.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="album" role="tabpanel"
+                    aria-labelledby="dashboard-tab">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 w-full h-full gap-2">
+                        <div
+                            class="grid grid-cols-1 w-full h-32 sm:h-36 relative drop-shadow-lg scale-100 hover:scale-95">
+                            <a class="grid" href="detail-album.html">
+                                <img class="h-full w-full rounded-md object-cover absolute z-0"
+                                    src="assets/img/image2.jpg" alt="" />
+                                <div class="z-10 text-white m-auto bg-black bg-opacity-50 w-full p-2">
+                                    <h1 class="text-center">Pemandangan</h1>
+                                    <p class="text-center text-xs font-thin">
+                                        ini apa coba
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 w-full h-32 sm:h-36 relative drop-shadow-lg scale-100 hover:scale-95">
+                            <a class="grid" href="detail-album.html">
+                                <img class="h-full w-full rounded-md object-cover absolute z-0"
+                                    src="assets/img/image.jpg" alt="" />
+                                <div class="z-10 text-white m-auto bg-black bg-opacity-50 w-full p-2">
+                                    <h1 class="text-center">Programer</h1>
+                                    <p class="text-center text-xs font-thin">
+                                        ini adalah raja koding
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 w-full h-32 sm:h-36 relative drop-shadow-lg scale-100 hover:scale-95">
+                            <a class="grid" href="detail-album.html">
+                                <img class="h-full w-full rounded-md object-cover absolute z-0" src="assets/img/img.jpg"
+                                    alt="" />
+                                <div class="z-10 text-white m-auto bg-black bg-opacity-50 w-full p-2">
+                                    <h1 class="text-center">animals</h1>
+                                    <p class="text-center text-xs font-thin">
+                                        ini adalah animals
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 w-full h-32 sm:h-36 relative drop-shadow-lg scale-100 hover:scale-95">
+                            <a class="grid" href="detail-album.html">
+                                <img class="h-full w-full rounded-md object-cover absolute z-0"
+                                    src="assets/img/img4.jpg" alt="" />
+                                <div class="z-10 text-white m-auto bg-black bg-opacity-50 w-full p-2">
+                                    <h1 class="text-center">Olahraga</h1>
+                                    <p class="text-center text-xs font-thin">
+                                        ini adalah olahraga
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>
