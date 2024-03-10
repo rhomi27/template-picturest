@@ -7,6 +7,10 @@
   <title>Detail</title>
   <link href="assets/css/style.css" rel="stylesheet" />
   <style>
+    body::-webkit-scrollbar {
+      width: 0px;
+    }
+
     .barscroll::-webkit-scrollbar {
       width: 0px;
     }
@@ -15,25 +19,23 @@
 
 <body>
   <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky w-full z-30 top-0 start-0 drop-shadow-md">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 px-5">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-base font-semibold whitespace-nowrap dark:text-white">Detail Post</span>
+    <div class="w-full flex justify-between items-center p-2">
+      <a href="home.html" class="flex items-center pl-5 text-black text-lg font-bold">
+        <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24">
+          <path
+            d="M.88,14.09,4.75,18a1,1,0,0,0,1.42,0h0a1,1,0,0,0,0-1.42L2.61,13H23a1,1,0,0,0,1-1h0a1,1,0,0,0-1-1H2.55L6.17,7.38A1,1,0,0,0,6.17,6h0A1,1,0,0,0,4.75,6L.88,9.85A3,3,0,0,0,.88,14.09Z" />
+        </svg>
       </a>
-
-      <a href="home.html"
-        class="flex items-center gap-1 text-black text-xs font-semibold hover:text-gray-400 rounded-lg focus:ring-2">
-        Keluar
-        <span><svg class="w-4 h-4 me-2 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="m16,2.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-5.959,1.031l1.535,1.201c.652.509,1.595.395,2.105-.257.511-.652.396-1.595-.257-2.105l-1.535-1.201c-1.996-1.562-4.784-1.562-6.779,0l-3,2.347C.769,4.566,0,6.145,0,7.848v4.652c0,2.481,2.019,4.5,4.5,4.5h3c.829,0,1.5-.671,1.5-1.5s-.671-1.5-1.5-1.5h-3c-.827,0-1.5-.673-1.5-1.5v-4.652c0-.774.35-1.492.959-1.969l3-2.347c.907-.71,2.175-.71,3.082,0Zm13.249,8.053l-2.519-1.561-.493-1.623c-.443-1.419-1.715-2.4-3.105-2.4-.424.007-.877.096-1.293.278-.048.022-3.156,1.849-3.156,1.849-1.063.626-1.724,1.782-1.724,3.016v2.357c0,.829.671,1.5,1.5,1.5s1.5-.671,1.5-1.5v-2.357c0-.176.094-.341.246-.431l.754-.444v3.19c0,1.141.558,2.213,1.493,2.868l3.294,2.305c.133.094.213.247.213.41v3.458c0,.829.671,1.5,1.5,1.5s1.5-.671,1.5-1.5v-3.458c0-1.141-.558-2.213-1.493-2.868l-1.507-1.055v-2.045l1.71,1.06c.705.437,1.628.219,2.065-.485s.219-1.629-.485-2.065Zm-7.238,6.539c-.765-.313-1.643.052-1.957.818l-1.226,2.989c-.314.767.052,1.643.818,1.957.187.077.379.113.569.113.59,0,1.15-.351,1.388-.931l1.226-2.989c.314-.767-.052-1.643-.818-1.957ZM6,8c-.552,0-1,.448-1,1v1c0,.552.448,1,1,1h1c.552,0,1-.448,1-1v-1c0-.552-.448-1-1-1h-1Z" />
-          </svg></span></a>
+      <a href="#" class="flex-grow flex items-center justify-center">
+        <span class="text-sm font-medium whitespace-nowrap dark:text-white">Detail Post</span>
+      </a>
     </div>
   </nav>
+
   <!-- Modal toggle -->
 
   <!-- Main modal -->
-  <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+  <div id="modal-report" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
@@ -45,7 +47,7 @@
           </h3>
           <button type="button"
             class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-            data-modal-hide="authentication-modal">
+            data-modal-hide="modal-report">
             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -56,10 +58,41 @@
         <!-- Modal body -->
         <form class="p-4" action="#">
           <div class="mb-5">
-            <label for="message" class="block mb-2 text-sm text-gray-900 dark:text-white">alasan</label>
+            <label class="block mb-2 text-sm text-gray-900 dark:text-white">Alasan</label>
+            <div class="flex flex-wrap">
+              <div class="mr-4 mb-2">
+                <input type="checkbox" id="kategori-dewasa-18" name="kategori[]" value="Dewasa-18"
+                  class="text-blue-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                <label for="kategori-dewasa-18" class="ml-2 text-sm text-gray-900 dark:text-white">Dewasa-18</label>
+              </div>
+              <div class="mr-4 mb-2">
+                <input type="checkbox" id="kategori-kekerasan" name="kategori[]" value="Kekerasan"
+                  class="text-blue-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                <label for="kategori-kekerasan" class="ml-2 text-sm text-gray-900 dark:text-white">Kekerasan</label>
+              </div>
+              <div class="mr-4 mb-2">
+                <input type="checkbox" id="kategori-pelecehan" name="kategori[]" value="Pelecehan"
+                  class="text-blue-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                <label for="kategori-pelecehan" class="ml-2 text-sm text-gray-900 dark:text-white">Pelecehan</label>
+              </div>
+              <div class="mr-4 mb-2">
+                <input type="checkbox" id="kategori-penipuan" name="kategori[]" value="Penipuan"
+                  class="text-blue-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                <label for="kategori-penipuan" class="ml-2 text-sm text-gray-900 dark:text-white">Penipuan</label>
+              </div>
+              <div class="mr-4 mb-2">
+                <input type="checkbox" id="kategori-offensive" name="kategori[]" value="Jomok Homo"
+                  class="text-blue-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                <label for="kategori-offensive" class="ml-2 text-sm text-gray-900 dark:text-white">Jomok Homo</label>
+              </div>
+              <!-- Add more categories here -->
+            </div>
+          </div>
+          <div class="mb-5">
+            <label for="message" class="block mb-2 text-sm text-gray-900 dark:text-white">Lainnya</label>
             <textarea id="message" rows="4"
-              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Berikan alasan untuk postingan ini"></textarea>
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+              placeholder="Berikan alasan lainnya untuk postingan ini"></textarea>
           </div>
           <div class="flex justify-end">
             <button type="submit"
@@ -71,88 +104,193 @@
   </div>
 
 
-  <section id="foto">
-    <div class="container mx-auto p-5 w-full md:w-3/4">
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 mt-10">
-        <div class="w-full max-h-[560px] bg-black drop-shadow-md rounded-md">
-          <img class="rounded-sm h-full w-full object-contain" src="assets/img/image.jpg" alt="gambar" />
-        </div>
-        <div class="w-full max-h-screen ">
-          <div class="w-full max-h-full border border-gray-300 bg-white shadow-md p-4 mb-10">
-            <div class="flex justify-between items-center">
-              <a class="flex items-center" href="profil-user.html">
-                <img class="w-10 h-10 rounded-full object-cover mr-4" src="assets/img/image.jpg" alt="Neil image" />
-                <div class="flex flex-col">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Raja koding
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    rajakoding@gmail.com
-                  </p>
-                </div>
-              </a>
-              <button class="bg-red-600 p-1 rounded-lg text-white px-2 drop-shadow-md scale-100 hover:scale-105">follow</button>
-            </div>
 
-            <div class="mt-4">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
-                Judul Foto
-              </h2>
-              <p class="text-gray-500 dark:text-gray-400">
-                Deskripsi foto lorem ipsum...
-              </p>
-              <p class="text-black dark:text-gray-300 mt-5">
-                Tag: <button onclick="" class="text-blue-600">#nature #photography</button>
-              </p>
-            </div>
-            <div class="flex justify-between mt-10">
-              <div class="flex items-center">
-                <svg data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                  class="w-4 h-4 cursor-pointer" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
-                  viewBox="0 0 24 24" width="512" height="512">
-                  <path
-                    d="M17,10c-3.86,0-7,3.14-7,7s3.14,7,7,7,7-3.14,7-7-3.14-7-7-7Zm0,12c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm1.5-7.5c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5,.67-1.5,1.5-1.5,1.5,.67,1.5,1.5Zm-.5,3.5v2c0,.55-.45,1-1,1s-1-.45-1-1v-2c0-.55,.45-1,1-1s1,.45,1,1Zm-9,3c0,.55-.45,1-1,1h-3c-2.76,0-5-2.24-5-5V5C0,2.24,2.24,0,5,0h5.76c1.05,0,2.08,.43,2.83,1.17l3.24,3.24c.67,.67,1.08,1.56,1.16,2.5,.04,.55-.37,1.03-.92,1.08-.03,0-.05,0-.08,0-.52,0-.95-.4-1-.92,0-.03,0-.05,0-.08h-2.98c-1.1,0-2-.9-2-2V2.02c-.08,0-.16-.02-.24-.02H5c-1.65,0-3,1.35-3,3v12c0,1.65,1.35,3,3,3h3c.55,0,1,.45,1,1Z" />
-                </svg>
+  <section id="foto">
+    <div class="container mx-auto p-5 w-full md:w-11/12 lg:w-4/5">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 mt-5">
+        <!-- kiri -->
+        <div class="relative w-full min-h-[300px] max-h-[300px] md:max-h-[600px] md:min-h-[600px]">
+
+          <button data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" data-modal-target="modal-report"
+            data-modal-toggle="modal-report" type="button"
+            class="absolute top-2 right-2 z-[11] scale-100 hover:scale-90 transition-all duration-300">
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="currentColor" id="report" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m16 4v-.5a3.5 3.5 0 0 0 -3.5-3.5h-12.5v24h3v-10h7v.5a3.5 3.5 0 0 0 3.5 3.5h10.5v-14zm-13-1h9.5a.5.5 0 0 1 .5.5v7.5h-10zm18 12h-7.5a.5.5 0 0 1 -.5-.5v-.5h3v-7h5z" />
+            </svg></button>
+          <div id="tooltip-bottom" role="tooltip"
+            class="absolute z-[12] invisible inline-block px-3 py-2 text-xs md:text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Reports
+            <div class="tooltip-arrow" data-popper-arrow></div>
+          </div>
+
+          <img src="assets/img/img1.jpg" class="absolute z-0 w-full h-full rounded" />
+          <div class="absolute z-[5] w-full h-full bg-black bg-opacity-50 backdrop-blur rounded"></div>
+          <!-- Gambar asli -->
+          <img id="image" class="relative z-10 h-full w-full object-contain" src="assets/img/img1.jpg" alt="gambar" />
+        </div>
+
+        <!-- kanan -->
+        <div
+          class="w-full md:max-h-[600px] max-h-[400px] md:min-h-[600px] border border-gray-300 bg-white shadow-md rounded px-4 mb-5 overflow-y-scroll overflow-x-hidden barscroll">
+          <!-- header -->
+          <div class="flex justify-between bg-white border-b p-2 items-center sticky start-0 top-0 z-10">
+            <a class="flex items-center" href="profil-user.html">
+              <img class="w-10 h-10 rounded-full object-cover mr-4" src="assets/img/image.jpg" alt="Neil image" />
+              <div class="flex flex-col">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                  Raja koding
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                  rajakoding@gmail.com
+                </p>
               </div>
-              <div class="flex items-center gap-x-5">
-                <div class="flex items-center gap-1">
-                  <svg id="likeIcon" onclick="toggleLike()" fill="currentColor"
-                    class="h-4 w-4 scale-100 hover:scale-110 hover:drop-shadow-lg text-red-600 dark:text-gray-300 hover:text-blue-700 cursor-pointer"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            </a>
+            <button id="follow-btn" onclick="follow()" type="button"
+              class="bg-none border-2 border-red-500 p-1 rounded text-red-500 px-2 drop-shadow-md scale-100 hover:scale-105">
+              <svg id="follow" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="sm:w-4 sm:h-4 w-3 h-3"
+                viewBox="0 0 512 512">
+                <g>
+                  <path
+                    d="M490.667,234.667H448V192c0-11.782-9.551-21.333-21.333-21.333c-11.782,0-21.333,9.551-21.333,21.333v42.667h-42.667   c-11.782,0-21.333,9.551-21.333,21.333c0,11.782,9.551,21.333,21.333,21.333h42.667V320c0,11.782,9.551,21.333,21.333,21.333   c11.782,0,21.333-9.551,21.333-21.333v-42.667h42.667c11.782,0,21.333-9.551,21.333-21.333   C512,244.218,502.449,234.667,490.667,234.667z" />
+                  <circle cx="192" cy="128" r="128" />
+                  <path
+                    d="M192,298.667c-105.99,0.118-191.882,86.01-192,192C0,502.449,9.551,512,21.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C383.882,384.677,297.99,298.784,192,298.667z" />
+                </g>
+              </svg>
+              <svg class="sm:w-4 sm:h-4 w-3 h-3 hidden" id="followed" fill="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m24 12a1 1 0 0 1 -1 1h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1zm-15 0a6 6 0 1 0 -6-6 6.006 6.006 0 0 0 6 6zm0 2a9.01 9.01 0 0 0 -9 9 1 1 0 0 0 1 1h16a1 1 0 0 0 1-1 9.01 9.01 0 0 0 -9-9z" />
+              </svg>
+            </button>
+          </div>
+          <!-- konten -->
+          <div class="mt-4 border-b-2 pb-5 z-0">
+            <h2 class="md:text-lg  font-semibold text-gray-900 dark:text-white">
+              Judul Foto
+            </h2>
+            <p class="text-gray-600 text-sm dark:text-gray-400 indent-4 break-all leading-6 overflow-hidden max-h-[calc(24px*2)]"
+              id="fullText">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officia blanditiis tempora, similique nisi
+              quis officiis et, veniam excepturi doloremque id quasi consequuntur tenetur maiores beatae enim hic
+              voluptatibus nihil ipsa sint saepe aperiam ut! Vitae deserunt deleniti facere necessitatibus placeat nihil
+              blanditiis nesciunt. Fuga hic autem minus magnam praesentium?
+            </p>
+            <button id="toggleButton" class="text-sm text-blue-500 hover:underline" onclick="toggleText()">....Lihat
+              lebih banyak</button>
+            <div class="mt-5 flex-col">
+              <p
+                class="border px-4 flex justify-center items-center text-black border-gray-500 bg-gray-100 rounded-full">
+                nature</p>
+              <div class="flex flex-wrap max-w-full">
+                <a class="text-blue-500 text-sm font-medium px-1 cursor-pointer hover:underline">#photography</a>
+                <a class="text-blue-500 text-sm font-medium px-1 cursor-pointer hover:underline">#photography</a>
+                <a class="text-blue-500 text-sm font-medium px-1 cursor-pointer hover:underline">#photography</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-x-3 mt-4">
+              <div class="flex items-center gap-1">
+                <button onclick="toggleLike()"
+                  class=" text-red-600 cursor-pointer hover:text-white hover:bg-blue-600 p-2 rounded-full bg-blue-200 scale-100 hover:scale-110 transition-all duration-300">
+                  <svg id="likeIcon" fill="currentColor" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
                     <path
                       d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z" />
                   </svg>
-                  <svg style="display: none" id="likedIcon" onclick="toggleLike()" fill="currentColor"
-                    class="h-4 w-4  dark:text-gray-300  text-red-600 hover:text-blue-700 cursor-pointer"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <svg id="likedIcon" fill="currentColor" class="h-4 w-4 hidden
+                    xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
                       d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                   </svg>
-                  <span id="likeCount" class="text-gray-500 dark:text-gray-300">
-                    128</span>
-                </div>
-                <div class="flex items-center gap-1">
-                  <svg class="h-4 w-5" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect width="30" height="30" fill="url(#pattern0)" />
-                    <defs>
-                      <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                        <use xlink:href="#image0_187_87" transform="scale(0.0078125)" />
-                      </pattern>
-                      <image id="image0_187_87" width="128" height="128"
-                        xlink:href="data:image/png;base64,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" />
-                    </defs>
+                </button>
+                <span id="likeCount" class="text-gray-500 dark:text-gray-300">
+                  128</span>
+              </div>
+              <div class="flex items-center gap-1 ">
+                <label for="comments-input"
+                  class="text-black cursor-pointer hover:text-white hover:bg-blue-600 p-2 rounded-full bg-blue-200 scale-100 hover:scale-110 transition-all duration-300">
+                  <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Layer_1"
+                    data-name="Layer 1" viewBox="0 0 24 24">
+                    <path
+                      d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12h12v-12C24,5.383,18.617,0,12,0Zm10,22h-10c-5.514,0-10-4.486-10-10S6.486,2,12,2s10,4.486,10,10v10Zm-8.5-10c0,.828-.672,1.5-1.5,1.5s-1.5-.672-1.5-1.5.672-1.5,1.5-1.5,1.5.672,1.5,1.5Zm5,0c0,.828-.672,1.5-1.5,1.5s-1.5-.672-1.5-1.5.672-1.5,1.5-1.5,1.5.672,1.5,1.5Zm-10,0c0,.828-.672,1.5-1.5,1.5s-1.5-.672-1.5-1.5.672-1.5,1.5-1.5,1.5.672,1.5,1.5Z" />
                   </svg>
-                  <span class="text-gray-500 dark:text-gray-300">1</span>
+                </label>
+                <span class="text-gray-500 dark:text-gray-300">1</span>
+              </div>
+              <div class="flex items-center scale-100 hover:scale-110 transition-all duration-300">
+                <button onclick="copyUrl()" data-tooltip-target="tooltip-website-url"
+                  data-copy-to-clipboard-target="website-url"
+                  class="text-sm font-medium text-center text-black cursor-pointer hover:text-white hover:bg-blue-600 p-2 rounded-full bg-blue-200"
+                  type="button">
+                  <span id="default-icon">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                      viewBox="0 0 18 20">
+                      <path
+                        d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+                    </svg>
+                  </span>
+                  <span id="success-icon" class="hidden items-center">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 16 12">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5.917 5.724 10.5 15 1.5" />
+                    </svg>
+                  </span>
+                </button>
+                <div id="tooltip-website-url" role="tooltip"
+                  class="absolute z-10 invisible inline-block px-3 py-2 text-xs sm:text-sm font-normal text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                  <span id="default-tooltip">Copy link</span>
+                  <span id="success-tooltip" class="hidden">Copied!</span>
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+              </div>
+              <div class="flex items-center scale-100 hover:scale-110 transition-all duration-300">
+                <button onclick="downloadImage()" data-tooltip-target="tooltip-download"
+                  data-copy-to-clipboard-target="download" type="button" class="text-sm font-medium text-center text-black cursor-pointer hover:text-white hover:bg-blue-600 p-2 rounded-full bg-blue-200">
+                  <svg class="w-4 h-4 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="download"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="m19.949,5.536l-3.484-3.486c-1.323-1.322-3.081-2.05-4.95-2.05h-4.515C4.243,0,2,2.243,2,5v14c0,2.757,2.243,5,5,5h10c2.757,0,5-2.243,5-5v-8.515c0-1.871-.729-3.628-2.051-4.95Zm-1.414,1.415c.318.317.587.67.805,1.05h-4.341c-.552,0-1-.449-1-1V2.659c.38.218.733.487,1.051.805l3.484,3.486Zm1.465,12.05c0,1.654-1.346,3-3,3H7c-1.654,0-3-1.346-3-3V5c0-1.654,1.346-3,3-3h4.515c.163,0,.325.008.485.023v4.977c0,1.654,1.346,3,3,3h4.977c.015.16.023.322.023.485v8.515Zm-4.293-2.895c.391.39.391,1.023,0,1.414l-1.613,1.614c-.577.577-1.336.866-2.094.866s-1.517-.289-2.094-.866l-1.613-1.614c-.391-.391-.391-1.024,0-1.414.391-.391,1.023-.391,1.414,0l1.293,1.293v-4.398c0-.552.447-1,1-1s1,.448,1,1v4.398l1.293-1.293c.391-.391,1.023-.391,1.414,0Z" />
+                  </svg>
+                </button>
+                <div id="tooltip-download" role="tooltip"
+                  class="absolute z-10 invisible inline-block px-3 py-2 text-xs sm:text-sm font-normal text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                  <span id="download">Download Image</span>
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Daftar Komentar -->
+          <div class="mt-2 min-h-[300px]">
+            <h1 class="mb-5 text-[14px] font-medium border-b-2 w-full pb-2">Comments</h1>
+            <div class="flex items-start gap-2">
+              <img class="w-8 h-8 rounded-full object-cover" src="assets/img/image1.jpg" alt="Jese image" />
+              <div class="gap-1 w-full max-w-[400px]">
+                <div class="items-center space-x-2 mb-2">
+                  <span class="text-sm font-semibold text-gray-900 dark:text-white">Kim Gimyung</span>
+                  <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+                </div>
+                <div
+                  class="flex flex-row leading-1.5 p-2 border border-blue-300 bg-blue-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                  <p class="text-sm font-normal text-gray-900 dark:text-white">
+                    That's awesome. I think our users will really appreciate the
+                    improvements.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full h-full">
-            <div class="barscroll mt-3 flex items-center max-w-full max-h-64 gap-3 overflow-x-scroll overflow-y-hidden">
-              <img class="w-full h-64 object-cover" src="assets/img/img1.jpg" alt="" />
-              <img class="w-full h-64 object-cover" src="assets/img/img.jpg" alt="" />
-              <img class="w-full h-64 object-cover" src="assets/img/image3.jpg" alt="" />
+
+          <div class="flex-col sticky start-0 bottom-0" style="position: sticky; bottom: 0;">
+            <div class="flex mt-3 border-t bg-white py-2">
+              <input id="comments-input"
+                class="w-full py-2 px-4 text-sm rounded-l-md border border-blue-500 bg-blue-100 placeholder-blue-400"
+                type="text" placeholder="add comments">
+              <button class="bg-blue-500 px-4 text-white text-sm rounded-r-md">Kirim</button>
             </div>
           </div>
 
@@ -160,61 +298,79 @@
       </div>
     </div>
   </section>
-
-  <section id="coment">
-    <div class="container mx-auto p-5  w-full md:w-3/4">
-      <div class="mt-3 drop-shadow-sm border border-gray-400 rounded-md p-5">
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-          Komentar
-        </h3>
-        <!-- Daftar Komentar -->
-        <form action="">
-          <div class="flex mt-4">
-            <div class="relative w-full drop-shadow-md">
-              <button type="submit"
-                class="absolute top-0 right-0 px-5 h-full text-sm font-medium text-white bg-none border-l-0 rounded-e-lg border border-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <svg class="w-4 h-4 m-auto text-black" stroke="currentColor" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <path
-                    d="m3.539.26l-.038-.02C2.565-.194,1.481-.025.738.671.041,1.323-.182,2.273.187,3.217l4.933,8.785L.247,20.853c-.337.879-.111,1.829.587,2.479.465.434,1.062.661,1.68.661.374,0,.755-.083,1.121-.254l20.368-11.74L3.539.26ZM1.09,2.792c-.192-.498-.068-1.018.331-1.391.229-.214.594-.4,1.018-.4.197,0,.407.041.622.138l18.063,10.361H5.985L1.09,2.792Zm2.084,20.061c-.562.262-1.212.163-1.658-.252-.4-.373-.525-.893-.364-1.328l4.837-8.772h15.144L3.174,22.853Z" />
-                </svg>
-              </button>
-              <div id="tooltip" role="tooltip" class="absolute z-10 inline-block bg-opacity-20 right-20 -top-10 px-3 py-2 bg-red-400  text-sm font-normal text-red-800 rounded-lg shadow-sm tooltip dark:bg-gray-700">
-                Tooltip content
-                <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-              <input type="text" id="search-dropdown"
-                class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-blue-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                placeholder="Send Coment" required />
-            </div>
+  <section id="foto-find">
+    <div class="container mx-auto p-5 w-full md:w-11/12 lg:w-4/5">
+      <h1 class="text-center md:text-lg text-sm font-semibold bg-gray-100 p-1 rounded-full">Postingan Terkait</h1>
+      <div class="columns-2 gap-2 sm:gap-2 md:gap-3 lg:gap-4 sm:columns-2 md:columns-4 lg:columns-5 mt-5">
+        <figure class="flex flex-col border bg-white drop-shadow-md overflow-hidden  rounded-b-md mb-2">
+          <a class="overflow-hidden" href="detail.html">
+            <img
+              class="filter grayscale-0 hover:grayscale cursor-pointer transition-all duration-500 scale-100 hover:scale-105"
+              src="assets/img/img.jpg" alt="" />
+          </a>
+          <div class="flex gap-2 p-2 bottom-0 h-full justify-between w-full">
+            <a href="profil.html" class="flex items-center gap-2">
+              <img class="w-5 h-5 rounded-full object-cover" src="assets/img/image.jpg" alt="profil">
+              <h1 class="text-xs text-black">king koding</h1>
+            </a>
           </div>
-        </form>
 
-        <div class="mt-5">
-          <div class="flex items-start gap-2">
-            <img class="w-10 h-10 rounded-full object-cover" src="assets/img/image.jpg" alt="Jese image" />
-            <div class="gap-1 w-full max-w-[400px]">
-              <div class="items-center space-x-2 rtl:space-x-reverse">
-                <span class="text-sm font-semibold text-gray-900 dark:text-white">Kim Gimyung</span>
-                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
-              </div>
-              <br />
-              <div
-                class="flex flex-row leading-1.5 p-2 border border-gray-300 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-                <p class="text-sm font-normal text-gray-900 dark:text-white">
-                  That's awesome. I think our users will really appreciate the
-                  improvements.
-                </p>
-              </div>
-            </div>
+        </figure>
+        <figure class="flex flex-col border bg-white drop-shadow-md overflow-hidden  rounded-b-md mb-2">
+          <a class="overflow-hidden" href="detail.html">
+            <img
+              class="filter grayscale-0 hover:grayscale cursor-pointer transition-all duration-500 scale-100 hover:scale-105"
+              src="assets/img/image3.jpg" alt="" />
+          </a>
+          <div class="flex gap-2 p-2 bottom-0 h-full justify-between w-full">
+            <a href="profil.html" class="flex items-center gap-2">
+              <img class="w-5 h-5 rounded-full object-cover" src="assets/img/image.jpg" alt="profil">
+              <h1 class="text-xs text-black">king koding</h1>
+            </a>
+
           </div>
-        </div>
+
+        </figure>
+        <figure class="flex flex-col border bg-white drop-shadow-md overflow-hidden  rounded-b-md mb-2">
+          <a class="overflow-hidden" href="detail.html">
+            <img
+              class="filter grayscale-0 hover:grayscale cursor-pointer transition-all duration-500 scale-100 hover:scale-105"
+              src="assets/img/image3.jpg" alt="" />
+          </a>
+          <div class="flex gap-2 p-2 bottom-0 h-full justify-between w-full">
+            <a href="profil.html" class="flex items-center gap-2">
+              <img class="w-5 h-5 rounded-full object-cover" src="assets/img/image.jpg" alt="profil">
+              <h1 class="text-xs text-black">king koding</h1>
+            </a>
+          </div>
+        </figure>
+        <figure class="flex flex-col border bg-white drop-shadow-md overflow-hidden  rounded-b-md mb-2">
+          <a class="overflow-hidden" href="detail.html">
+            <img
+              class="filter grayscale-0 hover:grayscale cursor-pointer transition-all duration-500 scale-100 hover:scale-105"
+              src="assets/img/image1.jpg" alt="" />
+          </a>
+          <div class="flex gap-2 p-2 bottom-0 h-full justify-between w-full">
+            <a href="profil.html" class="flex items-center gap-2">
+              <img class="w-5 h-5 rounded-full object-cover" src="assets/img/image.jpg" alt="profil">
+              <h1 class="text-xs text-black">king koding</h1>
+            </a>
+
+          </div>
+
+        </figure>
+      </div>
+      <div class="flex justify-center mt-5">
+        <a href="home.html"
+          class=" bg-blue-500 text-white p-1 px-3 rounded-md shadow-lg scale-100 hover:scale-90 transition-all duration-300">Lebih
+          banyak</a>
       </div>
     </div>
   </section>
 
   <script src="assets/js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <script src="assets/js/detail.js"></script>
 </body>
 
 </html>

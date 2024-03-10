@@ -1,73 +1,36 @@
 var isLiked = false;
-  var likeCount = 128; // Nilai awal
+var likeCount = 128; // Nilai awal
 
-  function toggleLike() {
-    isLiked = !isLiked;
-    if (isLiked) {
-      likeCount++;
-    } else {
-      likeCount--;
-    }
-    updateLikeIcon();
-    updateLikeCount();
+function toggleLike() {
+  isLiked = !isLiked;
+  if (isLiked) {
+    likeCount++;
+  } else {
+    likeCount--;
   }
-
-  function updateLikeIcon() {
-    var likeIcon = document.getElementById('likeIcon');
-    var likedIcon = document.getElementById('likedIcon');
-
-    if (isLiked) {
-      likeIcon.style.display = 'none';
-      likedIcon.style.display = 'inline-block';
-    } else {
-      likeIcon.style.display = 'inline-block';
-      likedIcon.style.display = 'none';
-    }
-  }
-
-  function updateLikeCount() {
-    var likeCountElement = document.getElementById('likeCount');
-    likeCountElement.innerText = likeCount;
-  }
-
-  // darkmode
-  var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-// Change the icons inside the button based on previous settings
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    themeToggleLightIcon.classList.remove('hidden');
-} else {
-    themeToggleDarkIcon.classList.remove('hidden');
+  updateLikeIcon();
+  updateLikeCount();
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle');
+function updateLikeIcon() {
+  var likeIcon = document.getElementById('likeIcon');
+  var likedIcon = document.getElementById('likedIcon');
 
-themeToggleBtn.addEventListener('click', function() {
+  if (isLiked) {
+    likeIcon.classList.add('hidden');
+    likedIcon.classList.remove('hidden');
+  } else {
+    likeIcon.classList.remove('hidden');
+    likedIcon.classList.add('hidden');
+  }
+}
 
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
+function updateLikeCount() {
+  var likeCountElement = document.getElementById('likeCount');
+  likeCountElement.innerText = likeCount;
+}
 
-    // if set via local storage previously
-    if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        }
 
-    // if NOT set via local storage previously
-    } else {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        }
-    }
-    
-});
+
+
+

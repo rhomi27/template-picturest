@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draft</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Handlee&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky w-full z-40 top-0 start-0 shadow-sm">
+        <div class="max-w-screen flex flex-wrap items-center justify-between mx-auto px-5 p-2">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img class="w-6 h-6 sm:w-7 sm:h-7" src="assets/icon/android-chrome-192x192.png" alt="">
+                <span
+                    class="self-center hidden font-picturest sm:block text-sm sm:text-xl font-semibold whitespace-nowrap dark:text-white">Picturest</span>
+            </a>
+            <div class="flex">
+                <div class="w-full md:w-auto lg:w-[500px] hidden sm:flex" id="navbar-search">
+                    <input type="text" id="search-navbar"
+                        class="block w-full p-2 px-2 text-sm text-gray-900 border border-blue-300 rounded-l-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Search..." />
+                    <button class="flex items-center text-sm bg-blue-600 h-full px-5 rounded-r-lg">
+                        <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="search.html"
+                    class="sm:hidden text-blue-500 rounded-lg text-sm p-1.5 me-1 pl-2 scale-100 hover:scale-110 transition-all duration-300">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </a>
+            </div>
+            <div class="sm:flex hidden">
+                <a class="flex items-center p-2 text-black hover:text-blue-600" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Outline" fill="currentColor" viewBox="0 0 24 24"
+                        class="w-5 h-5">
+                        <path
+                            d="M19,1H5A5.006,5.006,0,0,0,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V6A5.006,5.006,0,0,0,19,1ZM5,3H19a3,3,0,0,1,2.78,1.887l-7.658,7.659a3.007,3.007,0,0,1-4.244,0L2.22,4.887A3,3,0,0,1,5,3ZM19,21H5a3,3,0,0,1-3-3V7.5L8.464,13.96a5.007,5.007,0,0,0,7.072,0L22,7.5V18A3,3,0,0,1,19,21Z" />
+                    </svg>
+                </a>
+                <button id="notifButton" data-dropdown-toggle="Notification"
+                    class="relative flex items-center p-2 text-black hover:text-blue-600">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M22.555,13.662l-1.9-6.836A9.321,9.321,0,0,0,2.576,7.3L1.105,13.915A5,5,0,0,0,5.986,20H7.1a5,5,0,0,0,9.8,0h.838a5,5,0,0,0,4.818-6.338ZM12,22a3,3,0,0,1-2.816-2h5.632A3,3,0,0,1,12,22Zm8.126-5.185A2.977,2.977,0,0,1,17.737,18H5.986a3,3,0,0,1-2.928-3.651l1.47-6.616a7.321,7.321,0,0,1,14.2-.372l1.9,6.836A2.977,2.977,0,0,1,20.126,16.815Z" />
+                    </svg>
+                    <div
+                        class="absolute top-1 right-2 block w-3 h-3 bg-red-500 border-2 border-white rounded-full dark:border-gray-900">
+                    </div>
+                </button>
+                <button class="flex items-center p-2 text-black hover:text-blue-600" id="dropButton"
+                    data-dropdown-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" fill="currentColor" data-name="Layer 1"
+                        viewBox="0 0 24 24" class="w-5 h-5">
+                        <path
+                            d="M3,6C3,2.691,5.691,0,9,0s6,2.691,6,6-2.691,6-6,6S3,9.309,3,6Zm18.724,12.567l1.841,1.06-.998,1.733-1.84-1.06c-.706,.796-1.646,1.378-2.726,1.598v2.101h-2v-2.101c-1.08-.22-2.021-.802-2.726-1.598l-1.84,1.06-.998-1.733,1.841-1.06c-.165-.496-.276-1.016-.276-1.567s.111-1.071,.276-1.567l-1.841-1.06,.998-1.733,1.84,1.06c.706-.796,1.646-1.378,2.726-1.598v-2.101h2v2.101c1.08,.22,2.021,.802,2.726,1.598l1.84-1.06,.998,1.733-1.841,1.06c.165,.496,.276,1.016,.276,1.567s-.111,1.071-.276,1.567Zm-3.224-1.567c0-.827-.673-1.5-1.5-1.5s-1.5,.673-1.5,1.5,.673,1.5,1.5,1.5,1.5-.673,1.5-1.5Zm-10.5,0c0-1.054,.19-2.06,.523-3h-3.523c-2.757,0-5,2.243-5,5v5H11.349c-2.041-1.65-3.349-4.171-3.349-7Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="default-sidebar"
+        class="fixed top-0 left-0 z-30 lg:w-52 sm:w-40 h-screen transition-transform hidden sm:flex flex-col"
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-white shadow-md">
+            <ul class="font-medium mt-14">
+                <li class="mb-3">
+                    <a href="home.html"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 group">
+                        <svg class="w-5 h-5 mb-1 text-black dark:text-gray-400 group-hover:text-blue-600 "
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M22.849,7.68l-.869-.68h.021V2h-2v3.451L13.849,.637c-1.088-.852-2.609-.852-3.697,0L1.151,7.68c-.731,.572-1.151,1.434-1.151,2.363v13.957H9V15c0-.551,.448-1,1-1h4c.552,0,1,.449,1,1v9h9V10.043c0-.929-.42-1.791-1.151-2.363Zm-.849,14.32h-5v-7c0-1.654-1.346-3-3-3h-4c-1.654,0-3,1.346-3,3v7H2V10.043c0-.31,.14-.597,.384-.788L11.384,2.212c.363-.284,.869-.284,1.232,0l9,7.043c.244,.191,.384,.478,.384,.788v11.957Z" />
+                        </svg>
+                        <span class="ms-3 text-black">Beranda</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="mengikuti.html"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 group">
+                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 mb-1 text-black  group-hover:text-blue-600" id="mengikuti"
+                            viewBox="0 0 24 24">
+                            <path d="M9,12A6,6,0,1,0,3,6,6.006,6.006,0,0,0,9,12ZM9,2A4,4,0,1,1,5,6,4,4,0,0,1,9,2Z" />
+                            <path
+                                d="M9,14a9.011,9.011,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,14,0,1,1,0,0,0,2,0A9.011,9.011,0,0,0,9,14Z" />
+                            <path
+                                d="M22,7.875a2.107,2.107,0,0,0-2,2.2,2.107,2.107,0,0,0-2-2.2,2.107,2.107,0,0,0-2,2.2c0,1.73,2.256,3.757,3.38,4.659a.992.992,0,0,0,1.24,0c1.124-.9,3.38-2.929,3.38-4.659A2.107,2.107,0,0,0,22,7.875Z" />
+                        </svg>
+                        <span class="ms-3">Mengikuti</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="create.html"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 group">
+                        <svg class="w-6 h-6 text-blue-700 border-2 border-blue-700 rounded-full p-1 group-hover:text-blue-600 group-hover:border-blue-600"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 1v16M1 9h16" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap text-blue-700">Upload</span>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="profil.html"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-blue-100 group">
+                        <svg class="w-5 h-5 mb-1 text-black dark:text-gray-400 group-hover:text-blue-600 "
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-4,21.164v-.164c0-2.206,1.794-4,4-4s4,1.794,4,4v.164c-1.226.537-2.578.836-4,.836s-2.774-.299-4-.836Zm9.925-1.113c-.456-2.859-2.939-5.051-5.925-5.051s-5.468,2.192-5.925,5.051c-2.47-1.823-4.075-4.753-4.075-8.051C2,6.486,6.486,2,12,2s10,4.486,10,10c0,3.298-1.605,6.228-4.075,8.051Zm-5.925-15.051c-2.206,0-4,1.794-4,4s1.794,4,4,4,4-1.794,4-4-1.794-4-4-4Zm0,6c-1.103,0-2-.897-2-2s.897-2,2-2,2,.897,2,2-.897,2-2,2Z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Profil</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="sm:p-6 p-2 sm:ml-40 lg:ml-52">
+        <div class="w-full h-full border border-blue-100 rounded bg-white relative pt-4">
+            <a href="create.html"
+                class="absolute top-2 right-2 bg-blue-600 text-white p-1 sm:p-2 rounded-full scale-100 hover:scale-105 transition-all duration-200">
+                <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="Layer_1"
+                    data-name="Layer 1" viewBox="0 0 24 24">
+                    <path
+                        d="M7.7,15.007a1.5,1.5,0,0,1-2.121,0L.858,10.282a2.932,2.932,0,0,1,0-4.145L5.583,1.412A1.5,1.5,0,0,1,7.7,3.533L4.467,6.7l14.213,0A5.325,5.325,0,0,1,24,12.019V18.7a5.323,5.323,0,0,1-5.318,5.318H5.318a1.5,1.5,0,1,1,0-3H18.681A2.321,2.321,0,0,0,21,18.7V12.019A2.321,2.321,0,0,0,18.68,9.7L4.522,9.7,7.7,12.886A1.5,1.5,0,0,1,7.7,15.007Z" />
+                </svg>
+            </a>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 p-2 sm:p-3 gap-2 mt-5">
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image1.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image1.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image2.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image2.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image3.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image3.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image1.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image1.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image2.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image2.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image3.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image3.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image1.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image1.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image2.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image2.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+                <a href="create.html"
+                    class="flex flex-col justify-center items-center rounded-md overflow-hidden relative min-h-[300px] max-h-[300px]">
+                    <img class="w-full h-full object-contain z-[5]" src="assets/img/image3.jpg" alt="">
+                    <div class="h-full w-full z-[2] bg-black absolute bg-opacity-20 backdrop-blur-sm  rounded-md"></div>
+                    <img class="w-full h-full object-cover absolute z-2" src="assets/img/image3.jpg" alt="">
+                    <h1 class="absolute z-[7] text-white text-xs sm:text-sm bottom-1 left-1">7 hari</h1>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>
